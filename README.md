@@ -68,15 +68,35 @@ Dependency-matrix prototype construction
 
 Unified episodic learning with multi-loss
 
-** Comparison to Related Work**
+**** Comparison to Related Work****
 
-**Aspect	                                   Existing Methods	                                              Proposed Method                                            	Advantage**
+Patch Selection-->
+Existing Methods: Typically use uniform sampling or attention-based mechanisms
 
-Patch Selection	                      Often uniform or attention-based                             Entropy-guided reliability filtering	                    Reduces noise, focuses on discriminative regions
-Prototype Learning	                  Mean embeddings per class	                                   Dependency-matrix structural prototypes                  Captures intra-class relationships
-Imbalance Handling                    Re-weighting, augmentation                                   Integrated in loss + patch selection                     More holistic, less ad-hoc
-Open-Set Rejection                 	  Threshold-based, auxiliary classifiers                         Distance to structural prototypes	                      No extra parameters, naturally emerges
+Proposed Method: Introduces entropy-guided reliability filtering
 
+Advantage: Reduces noise and focuses on the most discriminative and structurally stable regions of SAR images
+
+Prototype Learning-->
+Existing Methods: Rely on simple mean embeddings per class
+
+Proposed Method: Employs dependency-matrix structural prototypes
+
+Advantage: Captures richer intra-class relationships and channel-wise dependencies for more robust representation
+
+Imbalance Handling-->
+Existing Methods: Often use re-weighting or data augmentation techniques
+
+Proposed Method: Integrated approach combining loss design with patch selection
+
+Advantage: More holistic solution that directly addresses feature-level bias, not just sample distribution
+
+Open-Set Rejection-->
+Existing Methods: Typically threshold-based or require auxiliary classifiers
+
+Proposed Method: Uses distance to structural prototypes
+
+Advantage: No additional parameters needed; open-set detection emerges naturally from the learned embedding space
 
 
 title={A Novel Reliability-Aware Patch Selection-Based Few-Shot Learning for Target Recognition and Open-Set Identification in Ill-Posed SAR Images},
